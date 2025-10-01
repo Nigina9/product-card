@@ -1,0 +1,131 @@
+/* @font-face {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/fonts/MontserratRegular.woff2");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/fonts/MontserratBold.woff2");
+}  НЕ МОГУ ПОДКЛЮЧИТЬ ШРИФТЫ, НЕ ПОЛУЧАЕТСЯ*/
+
+body {
+    font-family: "Montserrat", "Arial", sans-serif;
+    margin: 0;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #515076;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 220px 85px 116px;
+    background-image: url("/images/background_title.png");
+    background-repeat: no-repeat;
+    background-position: 237px -31px;
+}
+
+.title-pager {
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 78px;
+    text-align: center;
+    margin: 0 0 110px 0;
+}
+
+.list-none {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.product-card {
+    padding: 25px;
+    background-color: #f7f7fa;
+    box-sizing: border-box;
+    width: 340px;
+    height: 573px;
+}
+
+.product-card__img {
+    margin-bottom: 20px;
+}
+
+.product-card__text {
+    display: inline-block;
+    color: #a5a3b9;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+.product-card__title {
+    color: #515076;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27px;
+    text-align: left;
+    margin: 0 0 7px 0;
+}
+
+.product-card__description {
+    margin: 0 0 17px 0;
+    line-height: 18px;
+    text-align: left;
+}
+
+.product-card__compound {
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 4px;
+}
+
+.compound-list {
+    margin-bottom: 25px;
+}
+
+.compound-list__item {
+    position: relative;
+    padding-left: 15px;
+}
+
+.compound-list__item:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+.compound-list__item::before {
+    content: '';
+    position: absolute;
+    background-image: url('/images/round_item.svg');
+    left: 1px;
+    top: 7px;
+    width: 7px;
+    height: 7px;
+}
+
+.wrapper-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper-price__rate {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.wrapper-price__value {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+}
