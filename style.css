@@ -140,3 +140,29 @@ body {
     font-weight: 400;
     line-height: 24px;
 }
+
+.wrapper-button {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    appearance: none;
+    text-decoration: none;
+    text-align: center;
+    color: inherit;
+    font-family: inherit;
+    font-size: 15px;
+    padding: 15px;
+    box-shadow: 2px 2px 10px 0px #5150761a;
+    background-color: #cacaf4;
+    border-radius: 10px;
+    border: #a5a3b9;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
