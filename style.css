@@ -166,6 +166,7 @@ body {
 .button:hover {
     opacity: 0.8;
 }
-.button--color{
+
+.button--color-pink {
     background-color: #dc9adf;
 }
