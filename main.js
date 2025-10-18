@@ -35,7 +35,7 @@ function openGoogle() {
     }
 };
 // 4. Вывод консоль лог 
-const mainTitle = document.querySelector('.title-pager');
+const mainTitle = document.querySelector('.main-title');
 
 mainTitle.addEventListener('mouseover', () => outputConsoleLog(mainTitle.textContent));
 
