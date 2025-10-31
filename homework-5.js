@@ -1,39 +1,39 @@
 // Задание № 1
-const showMessage = (country, temperature) => {
+const showTemperatureInConsole = (country, temperature) => {
     console.log(`Сейчас в ${country} температура  — ${temperature} градусов по Цельсию`);
 }
-showMessage("Ереване", 20);
-showMessage("Москвe", 15);
-showMessage("Лондоне", 5);
+showTemperatureInConsole("Ереване", 20);
+showTemperatureInConsole("Москвe", 15);
+showTemperatureInConsole("Лондоне", 5);
 
 // Задание № 2
 const SPEED_OF_SOUND = 343;
-const checkSound = (sound) => {
-    if (sound > SPEED_OF_SOUND) {
+const compareSpeed = (speed) => {
+    if (speed > SPEED_OF_SOUND) {
         console.log('Сверхзвуковая скорость')
-    } else if (sound === SPEED_OF_SOUND) {
+    } else if (speed === SPEED_OF_SOUND) {
         console.log('Звуковая скорость')
     } else {
         console.log('Дозвуковая скорость')
     }
 };
-checkSound(500);
-checkSound(300);
-checkSound(343);
+compareSpeed(500);
+compareSpeed(300);
+compareSpeed(343);
 
 // Задание №3
 const laptop = "Ноутбук";
 let priceLaptop = 35000;
-const checkBudget = (budget) => {
+const buyLaptop = (budget) => {
     if (budget >= priceLaptop) {
         console.log(`${laptop} приобретён. Спасибо за покупку`)
     } else {
         console.log(`Вам не хватает ${priceLaptop - budget}$, пополните баланс`)
     }
 }
-checkBudget(30000);
-checkBudget(36000);
-checkBudget(13000);
+buyLaptop(30000);
+buyLaptop(36000);
+buyLaptop(13000);
 
 const greetMessage = (name, counry, age) => {
     console.log(`Привет дорогой друг! Меня зовут ${name}, я из ${counry}, мне ${age} лет !`)
