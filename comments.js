@@ -1,4 +1,4 @@
-export const commentSocialMedia = [
+export const commentsSocialMedia = [
     {
         postId: 1,
         id: 1,
