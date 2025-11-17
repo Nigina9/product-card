@@ -1,4 +1,4 @@
-import {commentsSocialMedia} from "./comments.js";
+import { commentsSocialMedia } from "./comments.js";
 // Уровень 1
 // Создать массив чисел от 1 до 10. Отфильтровать его таким образом, что бы мы получил массив чисел, начиная с 5.
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -23,16 +23,19 @@ getReverseArray(furnitureInMyRoom);
 const commentsFilter = commentsSocialMedia.filter(comment => comment.email.endsWith('.com'));
 
 // 8. Перебрать массив таким образом, что бы пользователи с id меньше или равно 5 имели postId: 2, а те, у кого id больше 5, имели postId: 1
-const usersWithPostId = commentsSocialMedia.map(comment => 
-   comment.id <= 5 ? {...comment, postId: 2} : {...comment, postId: 1}
-);
+const usersWithPostId = commentsSocialMedia.map(comment => ({
+    ...comment,
+    postId: comment.id <= 5 ? 2 : 1
+}));
 
 // 9. Перебрать массив, что бы объекты состояли только из айди и имени
 const commentsWithIdName = commentsSocialMedia.map(({id, name}) => ({id, name}));
 
 // 10. Перебираем массив, добавляем объектам свойство isInvalid и проверяем: если длина тела сообщения (body) больше 180 символов - устанавливаем true, меньше - false.
-const commentsWithIdNameIsInvalid = commentsSocialMedia.map(comment => 
-   comment.body.length > 180 ?{...comment, isInvalid: true} : {...comment, isInvalid: false});
+const commentsWithIdNameIsInvalid = commentsSocialMedia.map(comment => ({
+    ...comment,
+     isInvalid: comment.body.length > 180 ? true : false
+}));
 
 // Уровень 3
 // 11. Почитать про метод массива reduce. Используя его, вывести массив почт и провернуть тоже самое с помощью метода map
