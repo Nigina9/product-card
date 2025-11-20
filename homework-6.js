@@ -88,7 +88,7 @@ const universeBooks = [
     }
 ]
 const books = [...favoriteBooks, ...universeBooks];
-console.log(books);
+
 // №8 Почитать про метод массива — forEach. Написать функцию, которая принимает массив сущностей с задания №9. Добавляем новое свойство для объекта "isRare (это редкий)" и в зависимости от года выпуска книги (или какой-то логики, связанной с вашей сущностью), устанавливаем true или false. Что я хочу этим сказать: если книга выпущена позже 2000 года, устанавливаем true (да, это редкий), нет - false (значит это не редкий).
 const checkReleaseBook = (array) => {
     array.forEach(book => {
@@ -96,4 +96,3 @@ const checkReleaseBook = (array) => {
     });
 }
 checkReleaseBook(books);
-console.log(books);
