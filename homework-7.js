@@ -34,8 +34,9 @@ const commentsWithIdName = commentsSocialMedia.map(({id, name}) => ({id, name}))
 // 10. Перебираем массив, добавляем объектам свойство isInvalid и проверяем: если длина тела сообщения (body) больше 180 символов - устанавливаем true, меньше - false.
 const commentsWithIdNameIsInvalid = commentsSocialMedia.map(comment => ({
     ...comment,
-     isInvalid: comment.body.length > 180 ? true : false
+     isInvalid: comment.body.length > 180 
 }));
+console.log(commentsWithIdNameIsInvalid);
 
 // Уровень 3
 // 11. Почитать про метод массива reduce. Используя его, вывести массив почт и провернуть тоже самое с помощью метода map
