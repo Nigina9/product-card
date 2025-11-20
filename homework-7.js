@@ -36,7 +36,7 @@ const commentsWithIdNameIsInvalid = commentsSocialMedia.map(comment => ({
     ...comment,
      isInvalid: comment.body.length > 180 
 }));
-console.log(commentsWithIdNameIsInvalid);
+
 
 // Уровень 3
 // 11. Почитать про метод массива reduce. Используя его, вывести массив почт и провернуть тоже самое с помощью метода map

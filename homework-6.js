@@ -34,7 +34,7 @@ checkSpeed(myCar);
 const getPropertyObject = (object, property) => {
     return object[property];
 }
-console.log(getPropertyObject(myProfile, 'name'));
+getPropertyObject(myProfile, 'name');
 
 // №5 Создать массив, который содержит названия продуктов (просто строки)
 const listProducts = ['молоко', 'хлеб', 'конфеты', 'кефир', 'яблоки', 'груши'];
