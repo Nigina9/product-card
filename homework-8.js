@@ -32,3 +32,32 @@ const getProductCardArray = productCards.reduce((acc, card) => {
     });
     return acc;
 }, []);
+// 6*. Реализовать функцию, которая при старте нашей страницы выводит сообщение с текстом, мол "Сколько карточек отобразить? От 1 до 5" и в зависимости от результата - будет выводить это количество. Должна быть защита от введенных других значений (имеется ввиду проверка if).P.S - код из задания №3 переместить в функцию, не нужно его дублировать
+const showCards = () => {
+    const answer = prompt("Сколько карточек вам показать?");
+    const numbers = Number(answer);
+    if (numbers >= 1 && numbers <= 5) {
+        productCardList.innerHTML = ''; 
+        const cardsShown = productCards.slice(0, numbers);
+        cardsShown.forEach(card => {
+            const productCardClone = productCardTemplate.content.cloneNode(true);
+            const productImg = productCardClone.querySelector('.product-card__img');
+            productImg.src = `images/${card.img}.jpg`;
+            productImg.alt = card.name;
+            productCardClone.querySelector('.product-card__product-title').innerHTML = card.name;
+            productCardClone.querySelector('.product-card__description').textContent = card.description;
+            const compoundList = productCardClone.querySelector('.compound-list');
+            card.compound.forEach(element => {
+                const newElement = document.createElement('li');
+                newElement.classList.add('compound-list__item');
+                newElement.textContent = element;
+                compoundList.appendChild(newElement);
+            });
+            productCardClone.querySelector('#product-price').innerHTML = `${card.price} &#8381`;
+            productCardList.appendChild(productCardClone);
+        })
+    } else {
+        alert('Попробуйте еще раз')
+    }
+};
+showCards();
