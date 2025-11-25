@@ -80,7 +80,7 @@ body {
     margin-bottom: 7px;
 }
 
-.product-card__product {
+.product-card__product-title {
     color: #515076;
     font-size: 20px;
     font-weight: 700;
@@ -129,13 +129,13 @@ body {
     justify-content: space-between;
 }
 
-.wrapper-price__rate {
+.rate {
     font-size: 20px;
     font-weight: 700;
     line-height: 24px;
 }
 
-.wrapper-price__value {
+.value {
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
