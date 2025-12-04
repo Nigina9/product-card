@@ -14,7 +14,7 @@
 
 <body>
     <main>
-        <div class="container">
+        <div class="container container--bgm">
             <h1 class="main-title">Выбери свой продукт</h1>
             <div class="wrapper-button">
                 <button class="button button-card" type="button">Поменять цвет карточки</button>
@@ -30,21 +30,126 @@
                     <span class="product-card__category"></span>
                     <h2 class="product-card__product-title"></h2>
                     <p class="product-card__description"></p>
-                    <span  class="product-card__compound">Состав:</span>
+                    <span class="product-card__compound">Состав:</span>
                     <ul class="list-none compound-list"></ul>
                     <div class="wrapper-price">
                         <b class="rate">Цена</b>
                         <span id="product-price" class="value"></span>
                     </div>
-                </li> 
+                </li>
             </template>
+            <section class="registration">
+                <h2 class="registration__title">Регистрация</h2>
+                <form class="registration__form" id="registration-form">
+                    <ul class="list-none registration__list">
+                        <li class="registration__item">
+                            <label class="registration__field-title" for="name" class="">Имя:</label>
+                            <input class="field" type="text" name="name" id="name" placeholder="Имя" minlength="3"
+                                maxlength="20" required>
+                        </li>
+                        <li class="registration__item">
+                            <label class="registration__field-title" for="surname">Фамилия:</label>
+                            <input class="field" type="text" name="surname" id="surname" placeholder="Фамилия"
+                                minlength="3" maxlength="20" required>
+                        </li>
+                        <li class="registration__item">
+                            <label class="registration__field-title" for="data">Дата рождения:</label>
+                            <input class="field" type="date" name="data" id="data" placeholder="01.01.2000">
+                        </li>
+                        <li class="registration__item">
+                            <label class="registration__field-title" for="login">Логин:</label>
+                            <input class="field" type="text" name="login" id="login" placeholder="Name2020"
+                                minlength="3" maxlength="20" required>
+                        </li>
+                        <li class="registration__item">
+                            <label class="registration__field-title" for="password">Пароль:</label>
+                            <input class="field" type="password" name="password" id="registration-password"
+                                placeholder="Введите пароль" minlength="8" maxlength="20" required>
+                        </li>
+                        <li class="registration__item">
+                            <label class="registration__field-title" for="confirm-password">Повторите пароль:</label>
+                            <input class="field" type="password" name="confirm-password" id="confirm-password"
+                                placeholder="Повторите пароль" minlength="8" maxlength="20" required>
+                        </li>
+                    </ul>
+                    <button class="button registration__button" type="submit">Зарегистрироваться</button>
+                </form>
+            </section>
+            <section class="authentication">
+                <button class="button authentication__button" type="button"
+                    id="authentication-button">Аутентификация</button>
+                <div class="modal-overlay">
+                    <div class="modal">
+                        <button class="modal__close-button" type="button" id="close-modal-button">
+                            <span class="visually-hidden">Закрыть</span>
+                        </button>
+                        <section class="modal__content">
+                            <h2 class="modal__title">Вход</h2>
+                            <form class="authentication-form">
+                                <label class="field-title" for="login">Логин:</label>
+                                <input class="field field--modal" type="text" name="login" placeholder="Name2020" minlength="3" maxlength="20" id="authentication-login" required>
+                                <label class="field-title" for="password">Пароль:</label>
+                                <input class="field field--modal" type="password" name="password" id="authentication-password" minlength="3" maxlength="20" placeholder="Пароль">
+                                <button class="button" type="submit">Авторизоваться</button>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
+    <footer class="page-footer">
+        <div class="container page-footer__container">
+            <div class="page-footer__wrapper">
+                <div class="social-media">
+                    <h2 class="social-media__title">Product Cards</h2>
+                    <p class="social-media__description">У нас самые лучшие продукты для кожи!</p>
+                    <ul class="list-none social-media__list">
+                        <li class="social-media__item">
+                            <a class="social-media___link social-media___link--telegram" href="#">
+                                <span class="visually-hidden">Телеграм</span>
+                            </a>
+                        </li>
+                        <li class="social-media__item">
+                            <a class="social-media___link social-media___link--vk" href="#">
+                                <span class="visually-hidden">Вконтакте</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="promo-subscription">
+                    <h2 class="promo-subscription__title">Подпишись на наши акции:</h2>
+                    <form class="form" id="email-form">
+                        <input class="form__input" type="email" name="email" placeholder="Введи Email..." required>
+                        <button class="form__button" type="submit">Подписаться</button>
+                    </form>
+                </div>
+                <div class="quick-links">
+                    <h2 class="quick-links__title">Быстрые ссылки</h2>
+                    <ul class="list-none quick-links__list">
+                        <li class="quick-links__item">
+                            <a class="quick-links__link" href="#">Главная</a>
+                        </li>
+                        <li class="quick-links__item">
+                            <a class="quick-links__link" href="#">Магазин</a>
+                        </li>
+                        <li class="quick-links__item">
+                            <a class="quick-links__link" href="#">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer-copyright">
+                www.product-cards.com&copy;all right reserve
+            </p>
+        </div>
+    </footer>
     <script src="main.js"></script>
     <script src="homework-5.js"></script>
     <script src="homework-6.js"></script>
     <script type="module" src="homework-7.js"></script>
     <script type="module" src="homework-8.js"></script>
+    <script src="homework-9.js"></script>
 </body>
 
 </html>
