@@ -30,19 +30,19 @@ registrationForm.addEventListener('submit', (event) => {
     registrationUserData = registrationUser;
 });
 
-// №3 Работа с модальным окном
-const authenticationButton = document.querySelector("#authentication-button");
-const modal = document.querySelector(".modal-overlay");
-authenticationButton.addEventListener('click', () => {
-    modal.classList.add("modal-overlay--showed");
-});
-const closeModalButton = document.querySelector("#close-modal-button");
-const closeModal = () => {
-    closeModalButton.addEventListener('click', () => {
-        modal.classList.remove("modal-overlay--showed")
-    })
-};
-closeModal();
+// // №3 Работа с модальным окном
+// const authenticationButton = document.querySelector("#authentication-button");
+// const modal = document.querySelector(".modal-overlay");
+// authenticationButton.addEventListener('click', () => {
+//     modal.classList.add("modal-overlay--showed");
+// });
+// const closeModalButton = document.querySelector("#close-modal-button");
+// const closeModal = () => {
+//     closeModalButton.addEventListener('click', () => {
+//         modal.classList.remove("modal-overlay--showed")
+//     })
+// };
+// closeModal();
 
 const authenticationForm = document.querySelector(".authentication-form");
 authenticationForm.addEventListener('submit', (event) => {
