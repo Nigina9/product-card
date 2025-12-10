@@ -1,5 +1,5 @@
 export class FormAuthentication {
-    constructor(idForm, userData) {
+    constructor(idForm, userData = null) {
         this.idForm = document.getElementById(idForm);
         this.userData = userData;
     }
@@ -10,7 +10,10 @@ export class FormAuthentication {
     }
     isValid() {
         const values = this.getValueForm(); 
-        if (!userData) return false; 
+        if (!this.userData) return false; 
         return values.login === this.userData.login && values.password === this.userData.password;
+    }
+      reset() {
+        this.idForm.reset();
     }
 }

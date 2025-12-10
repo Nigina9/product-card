@@ -1,7 +1,5 @@
-import {RegistrationForm} from "./Form-registration.js";
-import {
-    FormAuthentication
-} from "./Form-aut.js"
+import { RegistrationForm } from "./Form-registration.js";
+import { FormAuthentication } from "./Form-aut.js"
 let registrationUserData;
 // №1 Задание,  при нажатии на которую мы будем выводить консоль лог в виде объекта:  { email: 'введенная почта' }
 const emailForm = document.querySelector('#email-form');
@@ -28,7 +26,7 @@ registrationForm.addEventListener('submit', (event) => {
 const authenticationForm = document.getElementById("authentication-form")
 authenticationForm.addEventListener('submit', (event) => {
     event.preventDefault()
-    const authForm = new FormAuthentication("authentication-form");
+    const authForm = new FormAuthentication("authentication-form",registrationUserData);
     if (!authForm.isValid()) {
         alert("Логин или пароль не совпадают!");
         return;
@@ -37,5 +35,5 @@ authenticationForm.addEventListener('submit', (event) => {
     currentUser.lastLogin = new Date();
     console.log(currentUser);
     alert("Вы авторизовались!")
-    authenticationForm.reset();
+    authForm.reset();
 });
