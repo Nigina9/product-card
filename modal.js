@@ -1,26 +1,15 @@
-class Modal {
-    constructor(id, openButton, closeButton, overlay) {
-        this.id = document.getElementById('authentication-modal');
-        this.openButton = document.getElementById('authentication-button');
-        this.closeButton = document.getElementById('close-modal-button');
-        this.overlay = overlay;
+
+export class Modal {
+    constructor(modalId) {
+        this.modal = document.getElementById(modalId);
     }
     openModal() {
-        this.openButton.addEventListener('click', () => {
-            this.id.classList.add(this.overlay);
-        })
+        this.modal.classList.add("modal-overlay--showed");
     }
     closeModal() {
-        this.closeButton.addEventListener('click', () => {
-            this.id.classList.remove(this.overlay);
-        })
+        this.modal.classList.remove("modal-overlay--showed");
     }
-    checkOpenModal() {
-        this.id.classList.contains(this.overlay)
+    isOpen() {
+       return this.modal.classList.contains(("modal-overlay--showed"));
     }
-
-}
-const modalOverlay = new Modal('authentication-modal', 'authentication-button', 'close-modal-button', 'modal-overlay--showed')
-modalOverlay.openModal();
-modalOverlay.checkOpenModal();
-modalOverlay.closeModal();
+};

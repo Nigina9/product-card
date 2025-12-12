@@ -1,29 +1,31 @@
-class Employee {
-    constructor(name, surname, age, specialist, workExperience) {
+class CosmeticProduct {
+    constructor(name, brand, volume, price) {
         this.name = name;
-        this.surname = surname;
-        this.age = age;
-        this.specialist = specialist;
-        this.workExperience = workExperience;
+        this.brand = brand;
+        this.volume = volume;
+        this.price = price;
     }
-    greet() {
-        console.log(`Hello, my name ${this.name}, I am a ${this.specialist} who has been working for ${this.workExperience} years.`)
-    }
-}
-const companyEmployee = new Employee('Ivan','Petrov', 29, 'Senior frontend developer', 7);
-companyEmployee.greet();
-console.log(companyEmployee.name);
-
-class NewEmployee extends Employee {
-    constructor(name, surname, age, specialist, workExperience, probation) {
-       super(name, surname, age, specialist, workExperience); 
-       this.probation = probation; 
-    }
-    
-    welcomeNewEmployee() {
-        console.log(`Hi, I am ${this.name} ${this.surname}, I am ${this.age} years old, I'm a ${this.specialist} who has been working for ${this.workExperience} years. I have a probationary period of ${this.probation} months`);
+    showInfo() {
+        console.log(this.name, this.brand, this.volume, this.price);
     }
 }
-
-const companyNewEmployee = new NewEmployee('Petya', 'Simanov', 20, 'Junior frontend developer', 1, 3);
-companyNewEmployee.welcomeNewEmployee();
+class Cream extends CosmeticProduct{
+    constructor(name, brand, volume, price, skinType,  shelfLifeMonths){
+        super(name, brand, volume, price);
+        this.skinType = skinType;
+        this. shelfLifeMonths =  shelfLifeMonths;
+    }
+    showDescription(){
+        console.log(`Этот продукт предназначен для ${this.skinType} кожи`)
+    }
+    showPrice(){
+        console.log(`Стоимость продукта составляет ${this.price} рублей`)
+    }
+    showExpirationDate(){
+        console.log(`Срок годность продукта ${this.shelfLifeMonths} месяца`)
+    }
+};
+const dayCream = new Cream ('Nivea Care Ультралегкий крем', 'Nivea', 50, 380, 'сухой', 24)
+dayCream.showDescription();
+dayCream.showPrice();
+dayCream.showExpirationDate();

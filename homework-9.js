@@ -1,39 +1,62 @@
-import { RegistrationForm } from "./Form-registration.js";
-import { FormAuthentication } from "./Form-aut.js"
+import { Form } from "./Form.js";
+import { Modal} from "./Modal.js";
 let registrationUserData;
 // №1 Задание,  при нажатии на которую мы будем выводить консоль лог в виде объекта:  { email: 'введенная почта' }
-const emailForm = document.querySelector('#email-form');
-emailForm.addEventListener('submit', (event) => {
+const emailForm = new Form('email-form');
+emailForm.idForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    const form = event.target;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+    const data = emailForm.getValueForm();
     console.log(data);
 });
-// №2Если пользователь ввел два разных пароля - мы должны предупредить его о том, что регистрация отклонена. Если регистрация успешна - также выводим объект с свойствами и их значениями, как в задании №4. Дополнительно мы должны добавить к этому объекту свойство createdOn и указать туда время создания (используем сущность new Date())
-const registrationForm = document.getElementById("registration-form");
-registrationForm.addEventListener('submit', (event) => {
+// №3 Работа с модальным окном
+const authModal = new Modal("authentication-modal");
+const authenticationButton = document.querySelector("#authentication-button");
+const closeModalButton = document.querySelector("#close-modal-button");
+
+authenticationButton.addEventListener('click', () => {
+    authModal.openModal();
+});
+
+closeModalButton.addEventListener('click', () => {
+    authModal.closeModal();
+});
+// Переписала работу с формами
+const registrationForm = new Form("registration-form");
+registrationForm.idForm.addEventListener('submit', (event) => {
+    const registrationPassword = document.querySelector("#registration-password");
+    const password = registrationPassword.value;
+    const registrationConfirmPassword = document.querySelector("#confirm-password");
+    const confirmPassword = registrationConfirmPassword.value;
     event.preventDefault();
-    const registration = new RegistrationForm("registration-form")
-    if (!registration.isValid()) return;
-    const registrationUser = registration.getValueForm();
+    const registrationUser = registrationForm.getValueForm();
+    if (!registrationForm.isValid()) {
+        alert('Форма не валидна');
+        return;
+    }
+    if (password !== confirmPassword) {
+        alert('Пароли не совпадают, попробуйте еще раз');
+        return;
+    } else {
+        alert('Вы зарегистрированы!')
+    }
     registrationUser.createOn = new Date();
     console.log(registrationUser);
     registrationUserData = registrationUser;
-    registration.resetForm();
+    registrationForm.resetForm();
 });
-
-const authenticationForm = document.getElementById("authentication-form")
-authenticationForm.addEventListener('submit', (event) => {
+const authenticationForm = new Form("authentication-form");
+authenticationForm.idForm.addEventListener('submit', (event) => {
     event.preventDefault()
-    const authForm = new FormAuthentication("authentication-form",registrationUserData);
-    if (!authForm.isValid()) {
-        alert("Логин или пароль не совпадают!");
+    const authenticationData = authenticationForm.getValueForm();
+    if (authenticationData.login === registrationUserData.login && authenticationData.password === registrationUserData.password) {
+        const currentUser = registrationUserData;
+        currentUser.lastLogin = new Date();
+        console.log(currentUser);
+    } else {
+        alert("Логин и пароль не совпадают!")
         return;
     }
-    const currentUser = authForm.getValueForm();
-    currentUser.lastLogin = new Date();
-    console.log(currentUser);
     alert("Вы авторизовались!")
-    authForm.reset();
+    authenticationForm.resetForm();
+    authModal.closeModal();
 });
