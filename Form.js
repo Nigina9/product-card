@@ -1,6 +1,6 @@
 export class Form {
-    constructor(idForm) {
-        this.form = document.getElementById(idForm);
+    constructor(formId) {
+        this.form = document.getElementById(formId);
     }
 
     getValueForm() {
