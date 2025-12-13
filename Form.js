@@ -1,16 +1,16 @@
 export class Form {
-    constructor(idForm) {
-        this.idForm = document.getElementById(idForm);
+    constructor(form) {
+        this.form = document.getElementById(form);
     }
     getValueForm() {
-        const formData = new FormData(this.idForm);
+        const formData = new FormData(this.form);
         const values = Object.fromEntries(formData.entries());
         return values;
     }
     isValid() {
-        return this.idForm.checkValidity();
+        return this.form.checkValidity();
     }
     resetForm() {
-        this.idForm.reset()
+        this.form.reset()
     }
 }

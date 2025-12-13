@@ -1,9 +1,9 @@
 import { Form } from "./Form.js";
-import { Modal} from "./Modal.js";
+import { Modal } from "./Modal.js";
 let registrationUserData;
 // №1 Задание,  при нажатии на которую мы будем выводить консоль лог в виде объекта:  { email: 'введенная почта' }
 const emailForm = new Form('email-form');
-emailForm.idForm.addEventListener('submit', (event) => {
+emailForm.form.addEventListener('submit', (event) => {
     event.preventDefault();
     const data = emailForm.getValueForm();
     console.log(data);
@@ -22,7 +22,7 @@ closeModalButton.addEventListener('click', () => {
 });
 // Переписала работу с формами
 const registrationForm = new Form("registration-form");
-registrationForm.idForm.addEventListener('submit', (event) => {
+registrationForm.form.addEventListener('submit', (event) => {
     const registrationPassword = document.querySelector("#registration-password");
     const password = registrationPassword.value;
     const registrationConfirmPassword = document.querySelector("#confirm-password");
@@ -45,7 +45,7 @@ registrationForm.idForm.addEventListener('submit', (event) => {
     registrationForm.resetForm();
 });
 const authenticationForm = new Form("authentication-form");
-authenticationForm.idForm.addEventListener('submit', (event) => {
+authenticationForm.form.addEventListener('submit', (event) => {
     event.preventDefault()
     const authenticationData = authenticationForm.getValueForm();
     if (authenticationData.login === registrationUserData.login && authenticationData.password === registrationUserData.password) {

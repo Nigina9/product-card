@@ -9,8 +9,8 @@ class CosmeticProduct {
         console.log(this.name, this.brand, this.volume, this.price);
     }
 }
-class Cream extends CosmeticProduct{
-    constructor(name, brand, volume, price, skinType,  shelfLifeMonths){
+class Cream extends CosmeticProduct {
+    constructor(name, brand, volume, price, skinType,  shelfLifeMonths) {
         super(name, brand, volume, price);
         this.skinType = skinType;
         this. shelfLifeMonths =  shelfLifeMonths;
