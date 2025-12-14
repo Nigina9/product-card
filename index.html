@@ -78,14 +78,14 @@
             <section class="authentication">
                 <button class="button authentication__button" type="button"
                     id="authentication-button">Аутентификация</button>
-                <div class="modal-overlay">
+                <div class="modal-overlay" id="authentication-modal">
                     <div class="modal">
                         <button class="modal__close-button" type="button" id="close-modal-button">
                             <span class="visually-hidden">Закрыть</span>
                         </button>
                         <section class="modal__content">
                             <h2 class="modal__title">Вход</h2>
-                            <form class="authentication-form">
+                            <form class="authentication-form" id="authentication-form">
                                 <label class="field-title" for="login">Логин:</label>
                                 <input class="field field--modal" type="text" name="login" placeholder="Name2020" minlength="3" maxlength="20" id="authentication-login" required>
                                 <label class="field-title" for="password">Пароль:</label>
@@ -144,12 +144,7 @@
             </p>
         </div>
     </footer>
-    <script src="main.js"></script>
-    <script src="homework-5.js"></script>
-    <script src="homework-6.js"></script>
-    <script type="module" src="homework-7.js"></script>
-    <script type="module" src="homework-8.js"></script>
-    <script src="homework-9.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 
 </html>

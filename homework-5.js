@@ -43,3 +43,4 @@ greetMessage("Нигина", "Москвы", 28);
 let shop = "Пятерочка";
 let counter = 35;
 let randomNumber = 75;
+
