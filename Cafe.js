@@ -8,8 +8,8 @@ export class Cafe {
         return `Кафе ${this.name}, адрес: ${this.adress}`;
     }
 
-    order(drink) {
-        drink.givedrink();
+    orderDrink(drink) {
+        drink.presentDrink();
     }
 
 }
