@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Студенты</title>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <h1 class="title">Список пользователей</h1>
+            <div class="wrapper-button">
+                <button class="button" id="delete-button-all-cards">Удалить все карточки</button>
+                <button class="button" id="add-button-all-cards">Получить все карточки</button>
+            </div>
+            <div class="message-data-download">
+                <p class="message-data-download__text"> Карточки пользоватей загружаются... </p>
+            </div>
+            <ul class="users-list list-none"></ul>
+            <template id="user-card-template">
+                <li class="user-card">
+                    <img class="user-card__img">
+                    <p class="user-card__id user-text"></p>
+                    <p class="user-card__name user-text"></p>
+                    <p class="user-card__surname user-text"></p>
+                    <p class="user-card__email user-text"></p>
+                    <p class="user-card__age user-text"></p>
+                    <p class="user-card__city user-text"></p>
+                    <button class="button" type="button" id="delete-button-card">Удалить карточку</button>
+                </li>
+            </template>
+        </div>
+    </main>
+    <script src="async.js"></script>
+</body>
+
+</html>
