@@ -40,7 +40,7 @@ async function fetchUsers() {
     }
 }
 
-async function init() {
+async function initUsers() {
     let users = getUsersFromStorage();
 
     if (users) {
@@ -55,7 +55,7 @@ async function init() {
         }, 1000);
     }
 }
-init();
+initUsers();
 
 deleteAllCardsButton.addEventListener('click', () => {
     localStorage.removeItem('users');
@@ -65,7 +65,7 @@ deleteAllCardsButton.addEventListener('click', () => {
 addAllCardsButton.addEventListener('click', () => {
     const users = getUsersFromStorage();
     fetchUsers();
-    init();
+    initUsers();
     renderCardsUsers(users);
 });
 
