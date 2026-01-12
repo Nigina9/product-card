@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Артур",
+        "surname": "Иванов",
+        "email": "art1990@gmail.com",
+        "age": 30,
+        "city": "Москва",
+        "img": "man"
+    },
+    {
+        "id": 2,
+        "name": "Иван",
+        "surname": "Петров",
+        "email": "ivanpetrov@mail.ru",
+        "age": 24,
+        "city": "Суздаль",
+        "img": "man"
+    },
+    {
+        "id": 3,
+        "name": "Мария",
+        "surname": "Киселева",
+        "email": "martish@mail.ru",
+        "age": 26,
+        "city": "Питер",
+        "img": "woman"
+    },
+    {
+        "id": 4,
+        "name": "Алина",
+        "surname": "Осипова",
+        "email": "osipovaA@gmail.com",
+        "age": 17,
+        "city": "Пятигорск",
+        "img": "woman"
+    },
+    {
+        "id": 5,
+        "name": "Сева",
+        "surname": "Рожков",
+        "email": "sevala@gmail.ru",
+        "age": 29,
+        "city": "Нижний Новгород",
+        "img": "man"
+    },
+        {
+        "id": 5,
+        "name": "Дарья",
+        "surname": "Иванова",
+        "email": "dashka@gmail.com",
+        "age": 20,
+        "city": "Тула",
+        "img": "woman"
+    }
+]
