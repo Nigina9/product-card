@@ -7,24 +7,24 @@ const usersList = document.querySelector('.users-list');
 function renderCardsUsers(users) {
     usersList.innerHTML = '';
     users.forEach(card => {
-        const userСardTemplate = document.querySelector('#user-card-template');
-        const userCardClone = userСardTemplate.content.cloneNode(true);
-        userCardClone.querySelector('.user-card__img').src = `/images/${card.img}.jpg`;
-        userCardClone.querySelector('.user-card__id').textContent = `ID: ${card.id}`;
-        userCardClone.querySelector('.user-card__name').textContent = `Имя: ${card.name}`;
-        userCardClone.querySelector('.user-card__surname').textContent = `Фамилия: ${card.surname}`;
-        userCardClone.querySelector('.user-card__email').textContent = `Эл.почта: ${card.email}`;
-        userCardClone.querySelector('.user-card__age').textContent = `Возраст:${card.age}`;
-        userCardClone.querySelector('.user-card__city').textContent = `Город: ${card.city}`;
+        const userCardTemplate = document.querySelector('#user-card-template');
+        const userCardClone = userCardTemplate.content.cloneNode(true);
+        userCardClone.querySelector('.user-card__img').src = `/images/${ card.img }.jpg`;
+        userCardClone.querySelector('.user-card__id').textContent = `ID: ${ card.id }`;
+        userCardClone.querySelector('.user-card__name').textContent = `Имя: ${ card.name }`;
+        userCardClone.querySelector('.user-card__surname').textContent = `Фамилия: ${ card.surname }`;
+        userCardClone.querySelector('.user-card__email').textContent = `Эл.почта: ${ card.email }`;
+        userCardClone.querySelector('.user-card__age').textContent = `Возраст:${ card.age }`;
+        userCardClone.querySelector('.user-card__city').textContent = `Город: ${ card.city }`;
         usersList.appendChild(userCardClone);
     });
 }
 
-function saveToStorage(users) {
+function saveUsersToStorage(users) {
     localStorage.setItem('users', JSON.stringify(users));
 }
 
-function getFromStorage() {
+function getUsersFromStorage() {
     const data = localStorage.getItem('users');
     return data ? JSON.parse(data) : null;
 }
@@ -32,7 +32,7 @@ async function fetchUsers() {
     try {
         const response = await fetch('users.json');
         const users = await response.json();
-        saveToStorage(users);
+        saveUsersToStorage(users);
         return users;
     } catch (err) {
         downloadingText.textContent = 'Ошибка при загрузке данных';
@@ -41,7 +41,7 @@ async function fetchUsers() {
 }
 
 async function init() {
-    let users = getFromStorage();
+    let users = getUsersFromStorage();
 
     if (users) {
         downloadingText.classList.add('message-data-download--none');
@@ -63,7 +63,7 @@ deleteAllCardsButton.addEventListener('click', () => {
 });
 
 addAllCardsButton.addEventListener('click', () => {
-    const users = getFromStorage();
+    const users = getUsersFromStorage();
     fetchUsers();
     init();
     renderCardsUsers(users);
